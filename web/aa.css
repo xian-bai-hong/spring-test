@@ -1,0 +1,205 @@
+/*测试属性*/
+#nav,#banner,#main,#foot_box,#footer{
+    border:1px solid black;
+}
+/*通用*/
+body{
+    font:12px "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0;
+}
+ul,p,h1,h2,h3,h4,h5,h6,ol,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+img{vertical-align:bottom;}
+a{
+    color:#666;
+    text-decoration:none;
+}
+a:hover{
+    color:#FF0700;
+    text-decoration:underline;
+}
+.lf{
+    float:left;
+}
+.rt{float:right;}
+.clear{clear:both;}
+/**布局元素样式**/
+#top,#top_main,#nav,#banner,#main,#foot_box,#footer{
+    width:1211px;
+    margin:0 auto;
+}
+/*******1、页面顶部**********/
+#top{
+    /*高度，行高，背景颜色，下边框*/
+    height:30px;
+    line-height:30px;
+    background-color:#f7f7f7;
+    border-bottom:1px solid #eee;
+}
+#top>img{
+    margin-top:10px;
+    margin-right:5px;
+}
+/*文字列表*/
+#top>ul>li{
+    float:left;
+    margin-right:10px;
+}
+#top>ul b{
+    border-left:1px solid #ddd;
+    margin-right:10px;
+}
+/*会员俱乐部*/
+li.vip a{
+    padding-left:34px;
+    /*background:url(Images/vip.jpg) no-repeat left center;*/
+}
+/*大客户*/
+li.dakehu a{
+    padding-left:31px;
+    /*background:url(Images/vip.jpg) no-repeat left center;*/
+}
+/*手机京东*/
+li.app_jd a{
+    /*左内边距，行内块，高度，行高，背景*/
+    padding-left:23px;
+    display:inline-block;
+    height:22px;
+    line-height:22px;
+    /*background:url(Images/iconlist_2.png) no-repeat -128px -360px;*/
+}
+li.app_jd a:hover{
+    background-position:-128px -399px;
+}
+/*客户服务*/
+li.service>a{
+    /*左右内边距模拟宽度*/
+    padding:0 15px;
+    /*高度，行高*/
+    display:inline-block;
+    height:26px;
+    line-height:26px;
+    /*背景图像：水平偏右，垂直居中*/
+    /*background:url(Images/vip.jpg) no-repeat 95% center;*/
+    /*左右上边框：透明*/
+    border:1px solid transparent;
+    border-bottom:none;
+}
+/*客户服务-弹出菜单*/
+li.service{
+    /*相对定位：配合#service_items 做绝对定位*/
+    position:relative;
+}
+#service_items{
+    /*宽度，边框，背景颜色，文本水平居中，定位*/
+    box-sizing:border-box;
+    width:80px;
+    border:1px solid #ddd;
+    border-top:none;
+    background-color:#fff;
+    text-align:center;
+    /*绝对定位*/
+    position:absolute;
+    top:28px;
+    left:11px;
+    /*默认隐藏*/
+    display:none;
+}
+/*当鼠标移入到li.service上时，找到其子级#service_items ,并且显示*/
+li.service:hover #service_items{
+    display:block;
+}
+/*当鼠标移入到li.service上时，找到其直接子级a标记，设置样式*/
+li.service:hover>a{
+    border-color:#ddd;
+    background-color:#fff;
+    /*background-image:url(Images/star.jpg);*/
+}
+/**********2、LOGO 和 搜索框************/
+#top_main{
+    padding:10px 0;
+}
+/*搜索框和搜索按钮和热门搜索*/
+#search_box{
+    /*左浮动，宽度，左右外边距，min-height*/
+    float:left;
+    width:500px;
+    margin:0 80px 0 40px;
+    min-height:30px;
+}
+#search_box div.search{
+    /*高度，背景颜色*/
+    height:30px;
+    background-color:#e4393c;
+    /*边框*/
+    padding:3px;
+}
+#search_box input{
+    /*宽度，高度，取消边框*/
+    width:410px;
+    height:30px;
+    border:none;
+    box-sizing:border-box;
+    padding-left:10px;
+}
+#search_box button{
+    /*宽度，高度，取消边框，背景颜色*/
+    width:80px;
+    height:28px;
+    border:none;
+    background-color:#E4393C;
+    /*文字：大小，颜色，加粗*/
+    font-size:14px;
+    color:#fff;
+    font-weight:bold;
+}
+/*热门搜索*/
+#search_box div.hot_words{
+    /*上外边距*/
+    margin-top:5px;
+    /*宽度，高度，溢出隐藏*/
+    width:500px;
+    height:16px;
+    overflow:hidden;
+}
+#search_box div.hot_words span{
+    color:#999;
+}
+#search_box div.hot_words a{
+    color:#999;
+}
+/*我的京东*/
+#my_jd{
+    /*左浮动，边框，背景*/
+    float:left;
+    border:1px solid #EFEFEF;
+    background-color:#f7f7f7;
+    /*高度，左内边距，背景图像*/ /*20*17*/
+    padding-left:30px;
+    height:27px;
+    line-height:27px;
+    background-image:url(Images/iconlist_2.png);
+    background-repeat:no-repeat;
+    background-position:-116px -25px;
+    padding-right:5px;
+}
+#my_jd:hover{
+    background-color:#fff;
+    background-position:-116px -55px;
+}
+#my_jd b{
+    /*行内块，宽度，高度，边框 */
+    display:inline-block;
+    width:0px;
+    height:0px;
+    border:5px solid transparent;
+    border-top-color:#ccc;
+    /*相对定位：实现该元素的位置微调*/
+    position:relative;
+    top:3px;
+}
+
